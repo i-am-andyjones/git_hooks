@@ -1,0 +1,3 @@
+#!/bin/bash
+#Push repo from pidora to droplet
+git push origin master
