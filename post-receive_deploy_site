@@ -1,0 +1,11 @@
+#!/bin/bash
+# Hook is used to deploy content to another directory
+
+LOGFILE=./deploy.log
+DEPLOYDIR=/usr/share/nginx/project/quoter
+
+echo -e "Received Push Request at $( date +%F )" >> $LOGFILE
+echo " - Old SHA: $oldrev New SHA: $newrev Branch Name: $refname" >> $LOGFILE
+echo "Starting deploy." >> $LOGFILE
+GIT_WORK_TREE="$DEPLOYDIR" git checkout -f
+echo " - Finished deploy."
